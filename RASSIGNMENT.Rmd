@@ -61,10 +61,118 @@ vec <- c(141.2741, 141.8392, 140.5730,NA, 141.3571, 139.8689,
 
 # 1.2.1 Create a vector vec_1 with no missing values using conditional subsetting and explain your code 
 
-vec <- c(141.2, 141.8392, 140.5730,NA, 141.3571, 139.8689, 
+```{r}
+vec_11 <- c(141.2, 141.8392, 140.5730,NA, 141.3571, 139.8689, 
          137.9384, NA,139.6620, 138.2521, 138.8635, 141.3885, NA)
          
-print( na.omit(vec) )
+ print( na.omit(vec_11) )        
+```
+
+ 
+The code will run and it will print the values with all the missing values removed.
+
+# 1.2.2. Create a vector of indexes of missing values using conditional subsetting and explain your code. 
+
+
+```{r}
+missingvals<- (is.na(vec_11))
+```
+The code will run and return true for values that are missing and false for values that exist
+
+
+
+# 1.2.3. Write a code to determine how many missing values are in vec.
+```{r}
+print (sum(is.na(vec_11)))
+```
+
+
+
+# 1.2.4. Write a R code to create a data frame which contains details of 3 students as follows:
+# Name , surname, age and gender 
+
+```{r}
+students= data.frame(Name= c("Kamogelo", "Kitso", "Hamilton"),Surname= c("Mothibedi", "Baranye", "Gabadise"), Gender= c("Female", "Female" , "Male"),Age=c(19,18,20) )
+
+print(students)
+
+```
+
+# 2. Functions in R
+# 2.1. Create a function which returns a mean of an input vector and explain your code
+
+```{r}
+x <- c(12,14,28,34)
+mean(x)
+
+```
+
+x is the input vector and "mean(x)" is a function that calculates and returns the value of the mean.
+
+# 2.2. Create a function which take no inputs , it reads a Titanic .csv file and returns its content and explain your code.
+
+read.csv(Titanic)
+
+- The function will read and output the data that is in the data set file 
+
+
+#3. Conditionals and Loops 
+#3.1. Write a function that take an input below and returns a transformed vector below into 1 when its element is male and 2 when its female using ifelse. 
+
+```{r}
+g <- c("MALE","FEMALE","FEMALE","MALE","FEMALE","MALE","MALE","FEMALE", "MALE","MALE","FEMALE","MALE","MALE",
+"FEMALE","MALE","MALE","MALE")
+g <- c("MALE","FEMALE","FEMALE","MALE","FEMALE","MALE","MALE","FEMALE", "MALE","MALE","FEMALE","MALE","MALE",
+       "FEMALE","MALE","MALE","MALE")
+gg_Sex <- function(x){
+  ifelse(x == "MALE",1,2)
+}
+gg_Sex <- gg_Sex(g)
+
+ 
+
+gg_Sex
+
+```
+# 3.2. Generate x from normal distribution and sample with replacement "M" and "F" for male and female respectively by running the code below.
+
+```{r}
+x <- rnorm(1000, 120, 5)
+y <- sample(c("M","F"),size = 1000, replace = TRUE)
+
+
+```
+# 3.2.1. Use the "cbind " function in R to create one dataset and assign it to df 
+```{r}
+x <- rnorm(1000, 120, 5)
+y <- sample(c("M","F"),size = 1000, replace = TRUE)
+df <- cbind(x,y)
+```
+# 3.2.2. Convert df from 3.2.1 into a data.frame
+
+```{r}
+x <- rnorm(1000, 120, 5)
+y <- sample(c("M","F"),size = 1000, replace = TRUE)
+df <- data.frame(cbind(x,y))
+```
+# 3.2.3. Write a code using tidyverse to compute a number of males ("M") and females ("F") in 3.2.1
+
+```{r}
+x <- rnorm(1000, 120, 5)
+y <- sample(c("M","F"),size = 1000, replace = TRUE)
+df <-(cbind(x,y))
+
+
+
+
+```
+# 3.2.4. Create a bar plot using ggplot to visualize your results in 3.2.3
+
+
+
+
+
+# 3.2.5. Use mutate function to add sum of x per "M" and "F" and plot the results using sum of x per "M" and "F"
 
 
 
