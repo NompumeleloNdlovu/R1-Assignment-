@@ -1,0 +1,71 @@
+---
+title: "Assignment1R"
+author: "Nompumelelo Ndlovu"
+date: "17/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1.1 Variables
+
+
+# What is the value of " B " after running these command?
+
+```{r}
+a <- 5.0
+c <- 10
+t <- 12
+B <- a+c/t
+```
+
+The value of B is 5.83333333333333
+
+
+# What type of vector do you get in each of the following?
+
+```{r}
+vec_1 <- c(44, 5, 0, "k")
+```
+
+
+ The type of vector represented above is an integer and character vector
+
+```{r}
+vec_2 <- c(1, 2, 3, FALSE)
+```
+
+ The type of vector represented above is a numerical and logical vector
+
+```{r}
+vec_3 <- c("a", "b", "c", TRUE)
+```
+
+ The type of vector represented above is a character and logical vector 
+
+```{r}
+vec_4 <- c(1, 2, 3, "4")
+```
+
+The type of vector represented above is a numerical vector 
+
+# 1.2 Conditional Subsetting 
+Consider the following vector
+```{r}
+
+vec <- c(141.2741, 141.8392, 140.5730,NA, 141.3571, 139.8689, 
+         137.9384, NA,139.6620, 138.2521, 138.8635, 141.3885, NA)
+```
+
+# 1.2.1 Create a vector vec_1 with no missing values using conditional subsetting and explain your code 
+
+vec <- c(141.2, 141.8392, 140.5730,NA, 141.3571, 139.8689, 
+         137.9384, NA,139.6620, 138.2521, 138.8635, 141.3885, NA)
+         
+print( na.omit(vec) )
+
+
+
+
